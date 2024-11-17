@@ -1,0 +1,19 @@
+# Dockerfile para el backend
+FROM node:16
+
+# Configuración del directorio de trabajo
+WORKDIR /app
+
+# Copiar archivos necesarios
+COPY package*.json ./
+COPY src/js ./src/js
+COPY .env .env
+
+# Instalar dependencias
+RUN npm install
+
+# Exponer el puerto del backend
+EXPOSE 5000
+
+# Comando para iniciar la aplicación
+CMD ["npm", "start"]

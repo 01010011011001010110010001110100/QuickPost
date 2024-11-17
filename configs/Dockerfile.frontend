@@ -1,0 +1,8 @@
+# Dockerfile para el frontend
+FROM nginx:alpine
+
+# Copiar archivos estáticos al directorio predeterminado de Nginx
+COPY src /usr/share/nginx/html
+
+# Exponer el puerto del frontend
+EXPOSE 80
