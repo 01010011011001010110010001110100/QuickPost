@@ -33,5 +33,5 @@ app.post('/api/mensajes', async (req, res) => {
 });
 
 // Puerto del servidor
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor ejecutándose en el puerto ${PORT}`));
