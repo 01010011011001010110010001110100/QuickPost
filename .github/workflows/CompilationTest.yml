@@ -1,4 +1,4 @@
-name: Compilation Test
+name: Compilation Test.
 
 on:
   push:
