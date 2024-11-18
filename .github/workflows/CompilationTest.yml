@@ -1,4 +1,4 @@
-name: Ejecutar Servidor Node.js
+name: Compilation Test
 
 on:
   push:
@@ -7,11 +7,11 @@ on:
 
 jobs:
   build-and-run:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
 
     steps:
     - name: Verificar el repositorio
-      uses: actions/checkout@v3 
+      uses: actions/checkout@v3
 
     - name: Configurar Node.js
       uses: actions/setup-node@v3
@@ -23,12 +23,20 @@ jobs:
         npm install
 
     - name: Configurar variables de entorno
-      run: echo "MONGO_URI=${{ secrets.MONGO_URI }}" >> .env 
+      run: echo "MONGO_URI=${{ secrets.MONGO_URI }}" >> .env
 
-    - name: Ejecutar servidor Node.js
+    - name: Ejecutar servidor Node.js en segundo plano
       run: |
-        node src/js/index.js 
+        nohup node src/js/index.js &
+
+    - name: Esperar a que el servidor esté listo
+      run: |
+        until curl -s http://localhost:5000/api/mensajes; do
+          echo "Esperando a que el servidor inicie..."
+          sleep 5
+        done
+        echo "El servidor está corriendo."
 
     - name: Detener servidor después de la ejecución
       run: |
-        kill $(lsof -t -i:$(lsof -t -i:5000)) 
+        kill $(lsof -t -i:5000)

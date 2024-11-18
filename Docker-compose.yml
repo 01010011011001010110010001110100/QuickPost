@@ -11,8 +11,6 @@ services:
       - ./.env
     volumes:
       - ./src/js:/app/src/js
-    depends_on:
-      - mongo
     networks:
       - quickpost-network
 
@@ -27,19 +25,6 @@ services:
       - ./src:/usr/share/nginx/html
     networks:
       - quickpost-network
-
-  mongo:
-    image: mongo:5.0
-    container_name: quickpost-mongo
-    ports:
-      - "27017:27017"
-    networks:
-      - quickpost-network
-    volumes:
-      - mongo-data:/data/db
-
-volumes:
-  mongo-data:
 
 networks:
   quickpost-network:
