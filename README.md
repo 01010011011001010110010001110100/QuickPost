@@ -2,6 +2,23 @@
 
 **QuickPost** es una aplicación web de mensajería que permite a los usuarios enviar y recibir mensajes a través de un servidor backend basado en **Node.js** con **Express** y almacenarlos en una base de datos **MongoDB Atlas**. La aplicación utiliza un diseño frontend sencillo basado en **HTML**, **CSS** y **JavaScript**, ejecutado a través de contenedores Docker para garantizar portabilidad y facilidad de implementación.
 
+# Programa en funcionamiento
+
+### Docker
+![funcionano en docker](src/img/pw1.PNG)
+
+### Web
+![funcionando en el navegador](src/img/pw2.PNG)
+
+### MongoDB
+![funcionando en mongoDB](src/img/pw3.PNG)
+
+### Vercel
+![funcionando en Vercel](src/img/pw4.PNG)
+
+### Actions
+![funcionando en los actions](src/img/pw5.PNG)
+
 ## Tabla de Contenidos
 1. [Descripción del Proyecto](#descripción-del-proyecto)
 2. [Tecnologías Utilizadas](#tecnologías-utilizadas)
