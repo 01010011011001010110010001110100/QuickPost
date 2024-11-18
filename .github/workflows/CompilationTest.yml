@@ -3,7 +3,7 @@ name: Ejecutar Servidor Node.js
 on:
   push:
     branches:
-      - main  # O la rama que prefieras
+      - main
 
 jobs:
   build-and-run:
