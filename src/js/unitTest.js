@@ -1,3 +1,6 @@
+// Simulamos un backend para almacenar mensajes
+const mensajes = [];
+
 // Función para enviar mensajes
 function enviarMensaje(usuario, texto) {
   if (!usuario || !texto) {
